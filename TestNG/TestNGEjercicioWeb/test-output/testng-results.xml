@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-10-03T08:39:48 COT" name="Suite" finished-at="2022-10-03T08:41:49 COT" duration-ms="121165">
+    <groups>
+    </groups>
+    <test started-at="2022-10-03T08:39:48 COT" name="Test" finished-at="2022-10-03T08:41:49 COT" duration-ms="121165">
+      <class name="run.Run">
+        <test-method is-config="true" signature="beforeClass(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:run.Run@4f6ee6e4]" started-at="2022-10-03T08:39:48 COT" name="beforeClass" finished-at="2022-10-03T08:39:51 COT" duration-ms="2884" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.mercadolibre.com.co]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[./imagenes/logo.png]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[./imagenes/logoTools.png]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[./imagenes/logoMercuryTours.png]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[./output]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="seleccionarPrimerProducto(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:run.Run@4f6ee6e4]" started-at="2022-10-03T08:39:53 COT" name="seleccionarPrimerProducto" data-provider="datosMercLibrePro" finished-at="2022-10-03T08:40:21 COT" duration-ms="27902" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.mercadolibre.com.co]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Si]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Si]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[teclado]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[compraRegistro@cbit.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- seleccionarPrimerProducto -->
+        <test-method signature="crearCuenta(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:run.Run@4f6ee6e4]" started-at="2022-10-03T08:40:21 COT" name="crearCuenta" data-provider="datosMercLibreCuenta" finished-at="2022-10-03T08:40:35 COT" duration-ms="13809" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.mercadolibre.com.co]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Si]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Si]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[crearCuenta@cbit.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- crearCuenta -->
+        <test-method signature="alertsTools(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:3, instance:run.Run@4f6ee6e4]" started-at="2022-10-03T08:40:35 COT" name="alertsTools" data-provider="datosToolsAlerts" finished-at="2022-10-03T08:41:15 COT" duration-ms="40737" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://demoqa.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Si]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Si]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Hoy trasnoche]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- alertsTools -->
+        <test-method signature="dateTools(java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:run.Run@4f6ee6e4]" started-at="2022-10-03T08:41:15 COT" name="dateTools" data-provider="datosToolsDate" finished-at="2022-10-03T08:41:31 COT" duration-ms="15825" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://demoqa.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Si]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Si]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dateTools -->
+        <test-method signature="mercuryTours(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:5, instance:run.Run@4f6ee6e4]" started-at="2022-10-03T08:41:31 COT" name="mercuryTours" data-provider="datosMercury" finished-at="2022-10-03T08:41:49 COT" duration-ms="17543" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://demo.guru99.com/selenium/newtours/]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Si]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Si]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[milton]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[guzman]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[3185504832]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[mercuryTours@gmail.com]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[dg 154 # 54-89]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Bogota]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[bogota D.C]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[111151]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[ESTONIA]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[exmeyer]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[periferia]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[periferia]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- mercuryTours -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:run.Run@4f6ee6e4]" started-at="2022-10-03T08:41:49 COT" name="afterClass" finished-at="2022-10-03T08:41:49 COT" duration-ms="296" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- run.Run -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

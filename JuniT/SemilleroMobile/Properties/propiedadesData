@@ -1,0 +1,9 @@
+platformName= Android
+deviceName= ZY323T7B2G
+platformVersion= 9	
+appPackage= com.google.android.calculator
+appActivity= com.android.calculator2.Calculator
+noReset= true
+autoGrantPermissions= true
+
+fileImputStreamData=./data/data.xlsx
