@@ -1,0 +1,24 @@
+package mapsObject;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import claseBase.ClaseBase;
+
+public class MapObjectToolsDatePicker extends ClaseBase
+{
+
+	public MapObjectToolsDatePicker(WebDriver driver) 
+	{
+		super(driver);
+	}
+
+	//ELEMENTOS DE LA PAG PRINCIPAL
+	protected By btnDatePicker = By.xpath("//*[text()='Date Picker']");//
+	protected By txtSelectDate = By.id("datePickerMonthYearInput");//
+	
+	protected By txtDataAndTime = By.id("dateAndTimePickerInput");//
+
+	protected By textDataAndTime = By.xpath("(//div[@class='col-md-3 col-sm-12'])[2]");//
+	
+}

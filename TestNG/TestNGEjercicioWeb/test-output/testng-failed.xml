@@ -11,7 +11,7 @@
       <class name="run.Run">
         <methods>
           <include name="afterClass"/>
-          <include name="mercuryTours" invocation-numbers="0"/>
+          <include name="crearCuenta" invocation-numbers="0"/>
           <include name="beforeClass"/>
         </methods>
       </class> <!-- run.Run -->

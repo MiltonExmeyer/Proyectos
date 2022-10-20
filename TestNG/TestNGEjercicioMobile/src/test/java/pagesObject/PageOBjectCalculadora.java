@@ -11,27 +11,30 @@ import mapsObject.MapObjectCalculadora;
 
 public class PageOBjectCalculadora extends MapObjectCalculadora {
 
-	public PageOBjectCalculadora(AppiumDriver<MobileElement> driver) 
-	{
+	public PageOBjectCalculadora(AppiumDriver<MobileElement> driver) {
 		super(driver);
-		this.driver = (AppiumDriver<MobileElement>)driver;
+		this.driver = (AppiumDriver<MobileElement>) driver;
 	}
 
 	// ENVIAR NUMEROS DE N TAMAÑO INT
-	public void operaciones(String valorUno,String valorDos, String resultadoEsperado,File rutaCarpeta, String operacion,String evidencia)
-			throws Exception, InterruptedException, IOException {
-		// ENVIAR PRIMER NUMERO
-		crearArray(valorUno, btnNumeros, rutaCarpeta, evidencia);
-		// OPERACION
-		click(localizadorVariableXpath(btnOperaciones, operacion), rutaCarpeta, evidencia, "Click en el el boton " + operacion);
-		// ENVIAR SEGUNDO NUMERO
-		crearArray(valorDos, btnNumeros, rutaCarpeta,evidencia);
-		// RESULTADO
-		click(btnResult, rutaCarpeta, evidencia, "Se seleciona igual ");
-		tiempoEspera(1000);
-		//Assert.assertEquals((localizadorVariableXpath(txtResultado, resultadoEsperado).toString().contains(resultadoEsperado)), resultadoEsperado);
-		//Assert.assertEquals((textoXpath(txtResultado)), resultadoEsperado, "El resultado es diferente al esperado");
-		//tiempoEspera(1000);
+	public void operaciones(String valorUno, String valorDos, String resultadoEsperado, File rutaCarpeta,
+			String operacion, String evidencia) throws Exception, InterruptedException, IOException {
+		try {
+			// ENVIAR PRIMER NUMERO
+			crearArray(valorUno, btnNumeros, rutaCarpeta, evidencia);
+			// OPERACION
+			click(localizadorVariableXpath(btnOperaciones, operacion), rutaCarpeta, evidencia,
+					"Click en el el boton " + operacion);
+			// ENVIAR SEGUNDO NUMERO
+			crearArray(valorDos, btnNumeros, rutaCarpeta, evidencia);
+			// RESULTADO
+			click(btnResult, rutaCarpeta, evidencia, "Se seleciona igual ");
+			tiempoEspera(1000);
+			Assert.assertEquals(texto(txtResultado), "50", "El resultado es diferente al esperado");
+		} catch (Exception e) {
+			System.out.println(e.toString());
+			throw new InterruptedException();
+		}
 	}
-	
+
 }

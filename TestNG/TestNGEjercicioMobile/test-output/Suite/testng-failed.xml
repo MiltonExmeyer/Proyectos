@@ -15,7 +15,7 @@
       <class name="run.Run">
         <methods>
           <include name="afterClass"/>
-          <include name="calculadora" invocation-numbers="0"/>
+          <include name="seleccionarPrimerProducto" invocation-numbers="0"/>
           <include name="beforeClass"/>
         </methods>
       </class> <!-- run.Run -->

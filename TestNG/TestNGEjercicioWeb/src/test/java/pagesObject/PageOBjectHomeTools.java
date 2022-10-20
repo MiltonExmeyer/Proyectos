@@ -30,7 +30,7 @@ public class PageOBjectHomeTools extends MapObjectHomeToolsQA
 		
 		//METODO PARA INGRESAR A LA SECCION ALERTS
 		tiempoEspera(1000);
-		clickTools(btnHomeAlerts,rutaCarpeta, evidencia);
+		clickTools(btnHomeAlerts,rutaCarpeta, evidencia, "Se ingresa a la seccion Alerts, Frame & Windows");
 		tiempoEspera(1000);
 		}
 		
@@ -40,7 +40,7 @@ public class PageOBjectHomeTools extends MapObjectHomeToolsQA
 		scrollDown(200, 1);
 		//METODO PARA INGRESAR A LA SECCION WIDGETS
 		tiempoEspera(1000);
-		clickTools(btnHomeWidgets,rutaCarpeta, evidencia);
+		clickTools(btnHomeWidgets,rutaCarpeta, evidencia,"Se ingresa a la secdcion Widgets");
 		tiempoEspera(1000);
 		}
 	}

@@ -5,14 +5,12 @@ import org.openqa.selenium.WebDriver;
 
 import claseBase.ClaseBase;
 
-public class MapObjectAlertWindowsTools extends ClaseBase
-{
+public class MapObjectAlertWindowsTools extends ClaseBase {
 
-	public MapObjectAlertWindowsTools(WebDriver driver) 
-	{
+	public MapObjectAlertWindowsTools(WebDriver driver) {
 		super(driver);
 	}
-	
+
 	// ELEMENTOS DE LA SECCION ALERT
 	protected By btnAlertsInicial = By.xpath("//*[text()='Alerts']");
 	// ALERT 1
@@ -22,6 +20,8 @@ public class MapObjectAlertWindowsTools extends ClaseBase
 	// ALERT 3
 	protected By btnAlertsConfirm = By.id("confirmButton");
 	// ALERT 4
-	protected By btnAlertsPromt= By.id("promtButton");
+	protected By btnAlertsPromt = By.id("promtButton");
+	// XPATH PARA ASSERT
+	protected By txtValidar = By.xpath("//span[@id='promptResult']");
 
 }

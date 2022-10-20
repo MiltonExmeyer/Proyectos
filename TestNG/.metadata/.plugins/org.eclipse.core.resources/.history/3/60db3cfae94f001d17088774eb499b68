@@ -1,0 +1,118 @@
+package pagesObject;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+
+import mapsObject.MapObjectMercuryTours;
+
+public class PagObjectMercuryTours extends MapObjectMercuryTours {
+
+	public PagObjectMercuryTours(WebDriver driver) {
+		super(driver);
+	}
+
+	// METODO INICIAL CON DATA EXCEL
+	public void urlAcceso(String url) throws IOException {
+		driver.get(url);
+	}
+
+	// METODO PRIMERA PRUEBA
+	public void homeMercury(File rutaCarpeta, String evidencia) throws Exception, InterruptedException, IOException
+
+	{
+		// INGRESAR ACCIONES
+		// BOTON REGISTER
+		tiempoEspera(1000);
+		click(btnRegister, rutaCarpeta, evidencia, "Se selecciona el boton Register");
+		tiempoEspera(1000);
+	}
+
+	// METODO PARA UN SELECT
+	public void select(By locator, File rutaCarpeta ,String evidencia,String country) throws Exception {
+		Select paisList = new Select(driver.findElement(locator));
+		paisList.selectByValue(country);
+
+	}
+
+	// METODO PRIMERA PRUEBA
+	public void formulario(File rutaCarpeta, String evidencia, String firstName, String lastName, String phone,
+			String email, String address, String city, String stateProvince, String postalCode, String country,
+			String userName, String password, String confirmPassword)
+			throws Exception, InterruptedException, IOException
+
+	{
+		// INGRESAR ACCIONES
+
+		// BORRAR
+		borrar(txtName, rutaCarpeta, evidencia, "Se limpia el cuadro de texto");
+		// ENVIAR TEXTO NOMBRE
+		sendKey(firstName, txtName, rutaCarpeta, evidencia,"Se ingresa el nombre");
+
+		// BORRAR
+		borrar(txtLastName, rutaCarpeta, evidencia, "Se limpia el cuadro de texto");
+		// ENVIAR TEXTO APELLIDO
+		sendKey(lastName, txtLastName, rutaCarpeta, evidencia, "Se ingresa el apellido");
+
+		// BORRAR
+		borrar(txtPhone, rutaCarpeta, evidencia, "Se limpia el cuadro de texto");
+		// ENVIAR TEXTO NUMERO DE CELULAR
+		sendKey(phone, txtPhone, rutaCarpeta, evidencia, "Se ingresa el numero de celular");
+
+		// BORRAR
+		borrar(txtEmail, rutaCarpeta, evidencia, "Se limpia el cuadro de texto");
+		// ENVIAR TEXTO EMAIL
+		sendKey(email, txtEmail, rutaCarpeta, evidencia, "Se ingresa el email");
+
+		// BORRAR
+		borrar(txtAddress, rutaCarpeta, evidencia, "Se limpia el cuadro de texto");
+		// ENVIAR TEXTO DIRECCION
+		sendKey(address, txtAddress, rutaCarpeta, evidencia, "Se ingresa la direccion");
+
+		// BORRAR
+		borrar(txtCity, rutaCarpeta, evidencia, "Se limpia el cuadro de texto");
+		// ENVIAR TEXTO CIUDAD
+		sendKey(city, txtCity, rutaCarpeta, evidencia, "Se ingresa la ciudad");
+
+		// BORRAR
+		borrar(txtState, rutaCarpeta, evidencia, "Se limpia el cuadro de texto");
+		// ENVIAR TEXTO ESTADO
+		sendKey(stateProvince, txtState, rutaCarpeta, evidencia, "Se ingresa el estado");
+
+		// BORRAR
+		borrar(txtPostalCode, rutaCarpeta, evidencia, "Se limpia el cuadro de texto");
+		// ENVIAR TEXTO CODIGO POSTAL
+		sendKey(postalCode, txtPostalCode, rutaCarpeta, evidencia, "Se ingresa el codigo postal");
+
+		// SELECCIONAR EL PAIS
+		// ENVIAR TEXTO
+		select(selectCountry, rutaCarpeta, evidencia, country);
+
+		// BORRAR
+		borrar(txtEmailUser, rutaCarpeta, evidencia, "Se limpia el cuadro de texto");
+		// ENVIAR TEXTO USUARIO
+		sendKey(userName, txtEmailUser, rutaCarpeta, evidencia, "Se ingresa usuario");
+
+		// BORRAR
+		borrar(txtPassword, rutaCarpeta, evidencia, "Se limpia el cuadro de texto");
+		// ENVIAR TEXTO CONTRASEÑA
+		sendKey(password, txtPassword, rutaCarpeta, evidencia, "Se ingresa la contraseña");
+
+		// BORRAR
+		borrar(txtConfirmPassword, rutaCarpeta, evidencia, "Se limpia el cuadro de texto");
+		// ENVIAR TEXTO CONFIRMAR CONTRASEÑA
+		sendKey(confirmPassword, txtConfirmPassword, rutaCarpeta, evidencia, "Se confirma la contraseña");
+		tiempoEspera(2000);
+		// CLICK BOTON ENVIAR
+		click(btnSubmit, rutaCarpeta, evidencia, "Se le da click en el boton enviar ");
+		tiempoEspera(2000);
+		// click(btnSubmit, rutaCarpeta);
+		// tiempoEspera(2000);
+		Assert.assertEquals(texto(txtFinal), "Note: Your user name is "+userName+".");
+
+	}
+}

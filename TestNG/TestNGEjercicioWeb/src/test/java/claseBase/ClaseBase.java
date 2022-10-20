@@ -4,8 +4,6 @@ import java.io.File;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-//import java.util.Properties;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -16,229 +14,313 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-//import org.testng.annotations.Test;
+import org.apache.logging.log4j.*;
 
 import Utilidades.GenerarReportePdf;
+import run.Run;
 
-//import Utilidades.GenerarReportePdf;
-
-public class ClaseBase 
-{
+public class ClaseBase {
+	private static Logger log = LogManager.getLogger(Run.class.getName());
 	protected static WebDriver driver;
-	
-	//CONSTRUCTOR DE CLASE
-	public ClaseBase (WebDriver driver)
-	{
+
+	// CONSTRUCTOR DE CLASE
+	public ClaseBase(WebDriver driver) {
 		super();
 	}
-  
-	//METODO DE NAVEGADOR
-		public static WebDriver chomeDriverConnetion()
-		{
-		//SETEAR LAS OPCIONES DEL NAVEGADOR 
-		//DEFINIR ESTRATEGIA DE CARGA DE LA PAG
-		ChromeOptions chromeOptions= new ChromeOptions();
+
+	// METODO DE NAVEGADOR
+	public static WebDriver chomeDriverConnetion() {
+		// SETEAR LAS OPCIONES DEL NAVEGADOR
+		// DEFINIR ESTRATEGIA DE CARGA DE LA PAG
+		ChromeOptions chromeOptions = new ChromeOptions();
 		chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-			
-		//SETEAR PROPIEDADES DEL NAVEGADOR
-		System.setProperty("webdriver.chrome.driver",".\\driver\\chromedriver.exe");
+
+		// SETEAR PROPIEDADES DEL NAVEGADOR
+		System.setProperty("webdriver.chrome.driver", ".\\driver\\chromedriver.exe");
 		driver = new ChromeDriver();
-			
-		//MAXIMIZAR VENTANA DEL NAVEGADOR
+
+		// MAXIMIZAR VENTANA DEL NAVEGADOR
 		driver.manage().window().maximize();
-			
+		// driver.manage().deleteAllCookies(); BORRAR COOKIES
+		log.info("NAVEGADOR INICIA DE FORMA CORRECTA");
+
 		return driver;
+	}
+
+	// METODO CLICK
+	public void click(By locator, File rutaCarpeta, String evidencia, String mensaje) throws Exception {
+		try {
+
+			driver.findElement(locator).click();
+			captureScreen(rutaCarpeta, locator, evidencia, mensaje);
+			tiempoEspera(1000);
+			log.info("Localizador correcto : " + locator);
+
+		} catch (Exception e) {
+			captureScreenError(rutaCarpeta, locator, evidencia, e.toString());
+			log.error(e.toString());
+			throw new InterruptedException();
 		}
-		
-		//METODO CLICK 
-				public void click(By locator, File rutaCarpeta, String evidencia) throws Exception
-				{
-					driver.findElement(locator).click();
-					captureScreen(rutaCarpeta, locator, evidencia);
-					tiempoEspera(1000);
-				}
-				
-				public void clickTools(By locator, File rutaCarpeta, String evidencia) throws Exception
-				{
-					captureScreen(rutaCarpeta, locator, evidencia);
-					driver.findElement(locator).click();
-					tiempoEspera(1000);
-				}
-				
-				
-				
-				
-				public void clickOptional(By locator, File rutaCarpeta, int numBusqueda,String evidencia) throws Exception
-				{
-					driver.findElement(locator).click();
-					captureScreen(rutaCarpeta, locator, evidencia);
-					tiempoEspera(1000);
-				}
-				
-				
-				public void validacion(By localizador, File rutaCarpeta, String evidencia) {
-				    try {
-				        driver.findElement(localizador).isEnabled();
-				        clickOptional(localizador, rutaCarpeta, 1, evidencia);
-				    }catch (Exception e){
-				    	System.out.println(e);
-				    }
-				}
-				
-				//METODO BORRAR
-				public void borrar (By locator, File rutaCarpeta, String evidencia) throws Exception
-				{
-					driver.findElement(locator).clear();
-					captureScreen(rutaCarpeta, locator, evidencia);
-				}
-				
-				//METODO BORRAR
-				public void borrartxt (By locator, File rutaCarpeta, String evidencia) throws Exception
-					{
-						driver.findElement(locator).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
-						captureScreen(rutaCarpeta, locator, evidencia);
-					}
-				
-				//METODO ENVIAR TEXTO
-				public void sendKey(String string, By locator, File rutaCarpeta, String evidencia) throws Exception
-				{
-					driver.findElement(locator).sendKeys(string);
-					captureScreen(rutaCarpeta, locator, evidencia);
-				}
-				
-				//METODO REEMPLAZAR VALORES
-				public void sendKeyValue(String string, By locator, File rutaCarpeta) throws Exception
-				{
-					driver.findElement(locator).sendKeys(Keys.chord(Keys.CONTROL,"a"), string);
-					captureScreenBasic(rutaCarpeta);
-				}
-				
-				//METODO ENTER SUBMIT
-				public void submit(By locator,  File rutaCarpeta, String evidencia) throws Exception
-				{
-					driver.findElement(locator).submit();
-					tiempoEspera(500);
-					captureScreen(rutaCarpeta, locator, evidencia);
-				}
-				
-				//METODO TIEMPO DE ESPERA
-				public void tiempoEspera(long tiempo) throws InterruptedException
-				{
-					Thread.sleep(tiempo);
-				}
-				
-				// SCROLL DOWN  200 PIXEL VERTICAL
-				public void scrollDown(int y, int numMovimiento) throws InterruptedException
-				{
-					JavascriptExecutor js = (JavascriptExecutor) driver;
-					for (int i=0; i<= numMovimiento; i++) {
-					js.executeScript("window.scrollBy(0,"+y+")");
-					}
-				}
-				
-				//METODO TIEMPO DE ESPERA
-				public void imprimirConsola(Exception mensaje) throws InterruptedException
-				{
-					System.out.println("e");
-				}
-				
-				// TOMA DE EVIDENCIAS CON SCREENSHOT
-				
-				public void captureScreenBasic(File rutaCarpeta) throws Exception
-				{
-					//tiempoEspera(1000);
-					String hora = HoraSistema();
-					File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-					FileUtils.copyFile(scrFile, new File(rutaCarpeta+"\\"+hora+".png"));
-				}
-				
-				public void captureScreen(File rutaCarpeta, By locator, String evidencia) throws Exception
-				{
-					if(evidencia.equals("Si"))
-					{
-					String hora = HoraSistema();
-					File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-					FileUtils.copyFile(scrFile, new File(rutaCarpeta+"\\"+hora+".png"));
-					String rutaImagen = new File(rutaCarpeta+"\\"+hora+".png").toString();
-					
-					//INSTANCIAR CLASE GENERAR PDF
-					GenerarReportePdf informePdf = new GenerarReportePdf();
-					//SE PROCEDE A INSERTAR LOCALIZADOR HE IMAGEN EN EL PDF
-					informePdf.crearBody(locator, rutaImagen);
-					
-					//ELIMINAR IMAGEN CREADA
-					eliminarArchivo(rutaImagen);
-					}
-				}
-				
-				public File crearCarpeta(String nomTest)
-				{
-					//ALMECENAMOS LA FECHA DEL SISTEMA 
-					String fecha = fechaHora();
-					//CREAMOS EL NOMBRE DE LA CARPETA
-					String nomCarpeta = nomTest+"-"+fecha;
-					//OBTENEMOS LA RUTA DE ALOJAMIENTO DE SALIDA Y EL NOMBRE DEL TEST A EJECUTAR 
-					File directorio = new File("./output/"+nomCarpeta);
-					//C:\Users\HP\eclipse-workspace\SemilleroToolsQa\output
-					//CREAMOS LA CARPETA ./Properties/output
-					directorio.mkdir();
-					return directorio;
-				}
-				
-				
-				public static String  fechaHora() 
-				{
-					//TOMAR LA FECHA DEL SISTEMA 
-					LocalDateTime fechaSistema = LocalDateTime.now();
-					//DEFINIR FORMATO FECHA
-					DateTimeFormatter fecha = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss");
-					//DAR FORMATO A LA FECHA DEL SISTEMA 
-					String formatFecha = fecha.format(fechaSistema);
-					return formatFecha;
-					
-				}
-				
-				public static String  fechaHoraDos() 
-				{
-					//TOMAR LA FECHA DEL SISTEMA 
-					LocalDateTime fechaSistema = LocalDateTime.now();
-					//DEFINIR FORMATO FECHA
-					DateTimeFormatter fecha = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-					//DAR FORMATO A LA FECHA DEL SISTEMA 
-					String formatFecha = fecha.format(fechaSistema);
-					return formatFecha;
-					
-				}
-				
-				public void eliminarArchivo(String rutaImagen)
-				{
-					File fichero = new File(rutaImagen);
-					fichero.delete();
-				}
-				
-				
-				public String  fechaHoraToolsQa() 
-				{
-					//TOMAR LA FECHA DEL SISTEMA 
-					LocalDateTime fechaSistemaToolsQa = LocalDateTime.now();
-					//DEFINIR FORMATO FECHA
-					DateTimeFormatter fechaToolQa = DateTimeFormatter.ofPattern("MM-dd-yyyy-HH-mm-ss");
-					//DAR FORMATO A LA FECHA DEL SISTEMA 
-					String formatFechaToolsQa = fechaToolQa.format(fechaSistemaToolsQa);
-					return formatFechaToolsQa;
-					
-				}
-				
-				public String HoraSistema ()
-				{
-					//TOMAR LA HORA DEL SISTEMA
-					LocalTime horaSistema = LocalTime.now();
-					//DEFINIR FORMATO HORA
-					DateTimeFormatter fecha = DateTimeFormatter.ofPattern("HHmmss");
-					//DAR FORMATO A LA HORA DEL SISTEMA
-					String hora = fecha.format(horaSistema);
-					return hora;
-				}
-		
-		
+	}
+
+	// METODO CLICK PARA TOOLS QA ALERTS
+	public void clickTools(By locator, File rutaCarpeta, String evidencia, String mensaje) throws Exception {
+		try {
+
+			captureScreen(rutaCarpeta, locator, evidencia, mensaje);
+			driver.findElement(locator).click();
+			tiempoEspera(1000);
+		} catch (Exception e) {
+			captureScreenError(rutaCarpeta, locator, evidencia, e.toString());
+			throw new InterruptedException();
+		}
+	}
+
+	// METODO CLICK PARA BUSCAR ELEMENTOS
+	public void clickOptional(By locator, File rutaCarpeta, int numBusqueda, String evidencia, String mensaje)
+			throws Exception {
+		try {
+
+			driver.findElement(locator).click();
+			captureScreen(rutaCarpeta, locator, evidencia, mensaje);
+			tiempoEspera(1000);
+		} catch (Exception e) {
+			captureScreenError(rutaCarpeta, locator, evidencia, e.toString());
+			throw new InterruptedException();
+		}
+	}
+
+	// METODO CLICK PARA VALIDAR LA PRESENCIA DE ELEMENTOS
+	public void validacion(By locator, File rutaCarpeta, String evidencia, String mensaje) throws Exception {
+		try {
+			try {
+				driver.findElement(locator).isEnabled();
+				clickOptional(locator, rutaCarpeta, 1, evidencia, mensaje);
+				log.info("Elemento visible : " + locator);
+			} catch (Exception e) {
+				System.out.println(e);
+				log.error(e.toString());
+			}
+		} catch (Exception e) {
+			captureScreenError(rutaCarpeta, locator, evidencia, e.toString());
+		}
+	}
+
+	// METODO BORRAR
+	public void borrar(By locator, File rutaCarpeta, String evidencia, String mensaje) throws Exception {
+		try {
+
+			driver.findElement(locator).clear();
+			captureScreen(rutaCarpeta, locator, evidencia, mensaje);
+			log.info("Se borra el texto de txt : " + locator);
+		} catch (Exception e) {
+			captureScreenError(rutaCarpeta, locator, evidencia, e.toString());
+			log.error(e.toString());
+		}
+	}
+
+	// METODO BORRAR CON TECLAS
+	public void borrartxt(By locator, File rutaCarpeta, String evidencia, String mensaje) throws Exception {
+		try {
+			driver.findElement(locator).sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+			captureScreen(rutaCarpeta, locator, evidencia, mensaje);
+			log.info("Se borra el texto de txt : " + locator);
+		} catch (Exception e) {
+			captureScreenError(rutaCarpeta, locator, evidencia, e.toString());
+			log.error(e.toString());
+			throw new InterruptedException();
+		}
+	}
+
+	// METODO ENVIAR TEXTO
+	public void sendKey(String string, By locator, File rutaCarpeta, String evidencia, String mensaje)
+			throws Exception {
+		try {
+			driver.findElement(locator).sendKeys(string);
+			captureScreen(rutaCarpeta, locator, evidencia, mensaje);
+			log.info("Se ingresa el valor en el elemento : " + locator);
+		} catch (Exception e) {
+			captureScreenError(rutaCarpeta, locator, evidencia, e.toString());
+			log.error(e.toString());
+			throw new InterruptedException();
+		}
+	}
+
+	// METODO REEMPLAZAR VALORES
+	public void sendKeyValue(String string, By locator, File rutaCarpeta, String evidencia, String mensaje)
+			throws Exception {
+		try {
+			driver.findElement(locator).sendKeys(Keys.chord(Keys.CONTROL, "a"), string);
+			captureScreen(rutaCarpeta, locator, evidencia, mensaje);
+			log.info("Se reemmplaza el valor en el elemento : " + locator);
+		} catch (Exception e) {
+			captureScreenError(rutaCarpeta, locator, evidencia, e.toString());
+			log.error(e.toString());
+			throw new InterruptedException();
+		}
+	}
+
+	// METODO ENTER SUBMIT
+	public void submit(By locator, File rutaCarpeta, String evidencia, String mensaje) throws Exception {
+		try {
+			driver.findElement(locator).submit();
+			tiempoEspera(500);
+			captureScreen(rutaCarpeta, locator, evidencia, mensaje);
+			log.info("Sen realiza Submit en el elemento : " + locator);
+		} catch (Exception e) {
+			captureScreenError(rutaCarpeta, locator, evidencia, e.toString());
+			log.error(e.toString());
+			throw new InterruptedException();
+		}
+	}
+
+	// METODO TIEMPO DE ESPERA
+	public void tiempoEspera(long tiempo) throws InterruptedException {
+		Thread.sleep(tiempo);
+	}
+
+	// SCROLL DOWN 200 PIXEL VERTICAL
+	public void scrollDown(int y, int numMovimiento) throws InterruptedException {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		for (int i = 0; i <= numMovimiento; i++) {
+			js.executeScript("window.scrollBy(0," + y + ")");
+		}
+		log.info("Se realiza escroll vertical de " + y + " pixeles" + numMovimiento + " cantidad de veces");
+	}
+
+	// METODO IMPRIMIR CONSOLA
+	public void imprimirConsola(Exception mensaje) throws InterruptedException {
+		System.out.println("e");
+	}
+
+	// TOMA DE EVIDENCIAS CON SCREENSHOT
+	public void captureScreenBasic(File rutaCarpeta) throws Exception {
+		// tiempoEspera(1000);
+		String hora = HoraSistema();
+		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(scrFile, new File(rutaCarpeta + "\\" + hora + ".png"));
+	}
+
+	// METODO CAPTURA PANTALLA
+	public void captureScreen(File rutaCarpeta, By locator, String evidencia, String mensaje) throws Exception {
+		if (evidencia.equals("Si")) {
+			String hora = HoraSistema();
+			File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			FileUtils.copyFile(scrFile, new File(rutaCarpeta + "\\" + hora + ".png"));
+			String rutaImagen = new File(rutaCarpeta + "\\" + hora + ".png").toString();
+
+			// INSTANCIAR CLASE GENERAR PDF
+			GenerarReportePdf informePdf = new GenerarReportePdf();
+			// SE PROCEDE A INSERTAR LOCALIZADOR HE IMAGEN EN EL PDF
+			informePdf.crearBody(locator, rutaImagen, mensaje);
+
+			// ELIMINAR IMAGEN CREADA
+			eliminarArchivo(rutaImagen);
+		}
+	}
+
+	// METODO ERROR AL CAPTURAR PANTALLA
+	public void captureScreenError(File rutaCarpeta, By locator, String evidencia, String msnError) throws Exception {
+		if (evidencia.equals("Si")) {
+			String hora = HoraSistema();
+			File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			FileUtils.copyFile(scrFile, new File(rutaCarpeta + "\\" + hora + ".png"));
+			String rutaImagen = new File(rutaCarpeta + "\\" + hora + ".png").toString();
+
+			// INSTACIAMOS LA CLASE GENERAR PDF
+			GenerarReportePdf informePdf = new GenerarReportePdf();
+			// SE PROCEDE A INSERTAR LOCALIZADOR HE IMAGEN EN EL PDF
+			informePdf.crearbodyError(locator, rutaImagen, msnError);
+			// ELIMINAR IMAGEN CREADA
+
+			eliminarArchivo(rutaImagen);
+		}
+	}
+
+	// METODO CREAR CARPETA
+	public File crearCarpeta(String nomTest) {
+		// ALMECENAMOS LA FECHA DEL SISTEMA
+		String fecha = fechaHora();
+		// CREAMOS EL NOMBRE DE LA CARPETA
+		String nomCarpeta = nomTest + "-" + fecha;
+		// OBTENEMOS LA RUTA DE ALOJAMIENTO DE SALIDA Y EL NOMBRE DEL TEST A EJECUTAR
+		File directorio = new File("./output/" + nomCarpeta);
+		// C:\Users\HP\eclipse-workspace\SemilleroToolsQa\output
+		// CREAMOS LA CARPETA ./Properties/output
+		directorio.mkdir();
+		return directorio;
+	}
+
+	// METODO FECHA HORA DEL SISTEMA
+	public static String fechaHora() {
+		// TOMAR LA FECHA DEL SISTEMA
+		LocalDateTime fechaSistema = LocalDateTime.now();
+		// DEFINIR FORMATO FECHA
+		DateTimeFormatter fecha = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss");
+		// DAR FORMATO A LA FECHA DEL SISTEMA
+		String formatFecha = fecha.format(fechaSistema);
+		return formatFecha;
+
+	}
+
+	// METODO FECHA Y HORA DEL SISTEMA CON FORMATO DIFERENTE
+	public static String fechaHoraDos() {
+		// TOMAR LA FECHA DEL SISTEMA
+		LocalDateTime fechaSistema = LocalDateTime.now();
+		// DEFINIR FORMATO FECHA
+		DateTimeFormatter fecha = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+		// DAR FORMATO A LA FECHA DEL SISTEMA
+		String formatFecha = fecha.format(fechaSistema);
+		return formatFecha;
+
+	}
+
+	// METODO ELIMINAR ARCHIVOS, PANTALLAZOS TOMADOS HE IMPLEMENTADOS EN EL REPORTE
+	// PDF
+	public void eliminarArchivo(String rutaImagen) {
+		File fichero = new File(rutaImagen);
+		fichero.delete();
+	}
+
+	// METODO FECHA HORA DEL SISTEMA PARA TOOLS QA DATE
+	public String fechaHoraToolsQa() {
+		// TOMAR LA FECHA DEL SISTEMA
+		LocalDateTime fechaSistemaToolsQa = LocalDateTime.now();
+		// DEFINIR FORMATO FECHA
+		DateTimeFormatter fechaToolQa = DateTimeFormatter.ofPattern("MM-dd-yyyy-HH-mm-ss");
+		// DAR FORMATO A LA FECHA DEL SISTEMA
+		String formatFechaToolsQa = fechaToolQa.format(fechaSistemaToolsQa);
+		return formatFechaToolsQa;
+
+	}
+
+	// METODO HORA SISTEMA
+	public String HoraSistema() {
+		// TOMAR LA HORA DEL SISTEMA
+		LocalTime horaSistema = LocalTime.now();
+		// DEFINIR FORMATO HORA
+		DateTimeFormatter fecha = DateTimeFormatter.ofPattern("HHmmss");
+		// DAR FORMATO A LA HORA DEL SISTEMA
+		String hora = fecha.format(horaSistema);
+		return hora;
+	}
+
+	// METODO CAPTURAR TEXTO DE UN XPATH
+	public String textoXpath(By locator) throws Exception {
+		return (driver.findElement(locator).getText());
+	}
+
+	// METODO VALIDAR EL ESTADO DE UN XPATH
+	public boolean estado(By locator) {
+		boolean resultado = driver.findElement(locator).isDisplayed();
+		return resultado;
+	}
+
+	// METODO CAPTURAR TEXTO DE UN XPATH
+	public String texto(By locator) {
+		String resultado = driver.findElement(locator).getText();
+		System.out.println(resultado);
+		return resultado;
+	}
+
 }

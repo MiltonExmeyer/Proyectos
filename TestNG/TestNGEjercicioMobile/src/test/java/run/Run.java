@@ -1,5 +1,8 @@
 package run;
 
+//import org.apache.logging.log4j.LogManager;
+//import org.apache.logging.log4j.Logger;
+import org.testng.Assert;
 import org.testng.annotations.*;
 import java.io.File;
 import java.io.IOException;
@@ -18,7 +21,13 @@ import pagesObject.PageObjectMercadoLibreCuenta;
 import pagesObject.PageObjectMercadoLibreHome;
 import pagesObject.PageObjectToolsDatePicker;
 
+import org.apache.logging.log4j.*;
+import org.apache.logging.log4j.core.filter.NoMarkerFilter;
+
+@SuppressWarnings("unused")
 public class Run {
+
+	private static Logger logg = LogManager.getLogger(Run.class.getName());
 
 	@SuppressWarnings("rawtypes")
 	private AppiumDriver driver;
@@ -79,7 +88,7 @@ public class Run {
 	@Test(dataProvider = "calculadora", priority = 1)
 	public void calculadora(String appPackage, String appActivity, String ejecutar, String evidencia, String operacion,
 			String valorUno, String valorDos, String resultadoEsperado) throws Exception {
-		
+
 		if (ejecutar.equals("Si")) {
 			driver = ClaseBase.appiumDriverConnetion(platformName, deviceName, platformVersion, appPackage, appActivity,
 					noReset, autoGrantPermissions);
@@ -89,6 +98,7 @@ public class Run {
 			String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 			// CREAR CARPERTA PARA ALMECENAMIENTO DE IMAGENES
 			File rutaCarpeta = claseBase.crearCarpeta(nomTest);
+			logg.info("El caso de prueba : " + nomTest + "ha iniciado correctamente");
 			// VALIDAR SI SE GENERA EVIDENCIA
 			if (evidencia.equals("Si")) {
 				try {
@@ -97,33 +107,38 @@ public class Run {
 					MyScreenRecorder.startRecording(nomTest, rutaCarpeta);
 					// INICIA CREACION DE REPORTE PDF
 					generarReportePdf.crearPlantilla(nomTest, rutaCarpeta);
+					logg.info("El caso de prueba : " + nomTest + " tomara evidencias");
 					// ACCEDER AL METODO DE PRUEBA INICIAL
 					calculadora.operaciones(valorUno, valorDos, resultadoEsperado, rutaCarpeta, operacion, evidencia);
 					// FINALIZAR GRABACION DE VIDEO
 					MyScreenRecorder.stopRecording();
 					// FINALILZAR CREACION DEL REPORTE PDF
-					generarReportePdf.cerrarPlantilla();
+					generarReportePdf.cerrarPlantilla("La prueba fue Exitosa");
 					// driver.close();
 				} catch (Exception e) {
+					logg.error(e.toString());
 					// FINALIZAR GRABACION DE VIDEO
 					MyScreenRecorder.stopRecording();
 					// FINALILZAR CREACION DEL REPORTE PDF
-					generarReportePdf.cerrarPlantilla();
+					generarReportePdf.cerrarPlantilla("La prueba ha fallado");
+					Assert.assertFalse(true);// con esta linea se hace que el test se muestre fallido en consola
 				}
-				
+
 			} else {
+				logg.info("La automatizacion " + nomTest + " no tomara evidencias");
 				System.out.println("No se tomaran evidencias para Calculadora...");
 				// ACCEDER AL METODO DE PRUEBA INICIAL
 				calculadora.operaciones(valorUno, valorDos, resultadoEsperado, rutaCarpeta, operacion, evidencia);
 			}
 
 		} else {
+			logg.info("El caso de prueba : Calculadora ha Fallado al iniciar");
 			System.out.println("La automatizacion no se ejecutara para Calculadora...");
 		}
 	}
 
-	
-	//INGRESAR A MERCADO LIBRE DESDE EL NAVEGADOR, COMPRAR UN PRODUCTO Y CREAR UNA CUENTA
+	// INGRESAR A MERCADO LIBRE DESDE EL NAVEGADOR, COMPRAR UN PRODUCTO Y CREAR UNA
+	// CUENTA
 	@DataProvider(name = "datosMercLibrePro")
 	public Object[][] datosMercLibrePro() throws Exception {
 		Object[][] arreglo = ExcelUtilidades.getTableArray("./Data/data.xlsx", "compra");
@@ -135,7 +150,7 @@ public class Run {
 	public void seleccionarPrimerProducto(String url, String appPackage, String appActivity, String ejecutar,
 			String evidencia, String producto, String nombre, String apellido, String documento, String email,
 			String clave) throws Exception {
-		
+
 		if (ejecutar.equals("Si")) {
 			driver = ClaseBase.appiumDriverConnetion(platformName, deviceName, platformVersion, appPackage, appActivity,
 					noReset, autoGrantPermissions);
@@ -148,6 +163,7 @@ public class Run {
 			String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 			// CREAR CARPERTA PARA ALMECENAMIENTO DE IMAGENES
 			File rutaCarpeta = claseBase.crearCarpeta(nomTest);
+			logg.info("El caso de prueba : " + nomTest + "ha iniciado correctamente");
 			// VALIDAR SI SE GENERA EVIDENCIA
 			if (evidencia.equals("Si")) {
 				try {
@@ -157,22 +173,26 @@ public class Run {
 					// INICIA CREACION DE REPORTE PDF
 					generarReportePdf.crearPlantilla(nomTest, rutaCarpeta);
 					// ACCEDER AL METODO DE PRUEBA INICIAL
+					logg.info("El caso de prueba : " + nomTest + " tomara evidencias");
 					google.buscador(url, evidencia, rutaCarpeta);
 					home.home(producto, evidencia, rutaCarpeta);
 					cuenta.formulario(nombre, apellido, documento, email, clave, evidencia, rutaCarpeta);
 					// FINALIZAR GRABACION DE VIDEO
 					MyScreenRecorder.stopRecording();
 					// FINALILZAR CREACION DEL REPORTE PDF
-					generarReportePdf.cerrarPlantilla();
+					generarReportePdf.cerrarPlantilla("La prueba fue Exitosa");
 					// driver.close();
 				} catch (Exception e) {
+					logg.error(e.toString());
 					// FINALIZAR GRABACION DE VIDEO
 					MyScreenRecorder.stopRecording();
 					// FINALILZAR CREACION DEL REPORTE PDF
-					generarReportePdf.cerrarPlantilla();
+					generarReportePdf.cerrarPlantilla("La prueba ha fallado");
+					Assert.assertFalse(true);
 				}
-				
+
 			} else {
+				logg.info("La automatizacion " + nomTest + " no tomara evidencias");
 				System.out.println("No se tomaran evidencias para Mercado libre comprar producto...");
 				// ACCEDER AL METODO DE PRUEBA INICIAL
 				google.buscador(url, evidencia, rutaCarpeta);
@@ -181,11 +201,12 @@ public class Run {
 			}
 
 		} else {
+			logg.info("El caso de prueba : Mercado Libre Comprar ha Fallado al iniciar");
 			System.out.println("La automatizacion no se ejecutara para Mercado libre comprar producto...");
 		}
 	}
 
-	//INGRESAR A MERCADO LIBRE DESDE EL NAVEGADOR Y CREAR UNA CUENTA
+	// INGRESAR A MERCADO LIBRE DESDE EL NAVEGADOR Y CREAR UNA CUENTA
 	@DataProvider(name = "datosMercLibreCu")
 	public Object[][] datosMercLibreCu() throws Exception {
 		Object[][] arreglo = ExcelUtilidades.getTableArray("./Data/data.xlsx", "crearCuenta");
@@ -195,13 +216,12 @@ public class Run {
 	@SuppressWarnings("unchecked")
 	@Test(dataProvider = "datosMercLibreCu", priority = 3)
 	public void crearCuenta(String url, String appPackage, String appActivity, String ejecutar, String evidencia,
-			String nombre, String apellido, String documento, String email, String clave)
-			throws Exception {
-		
+			String nombre, String apellido, String documento, String email, String clave) throws Exception {
+
 		if (ejecutar.equals("Si")) {
 			driver = ClaseBase.appiumDriverConnetion(platformName, deviceName, platformVersion, appPackage, appActivity,
 					noReset, autoGrantPermissions);
-			
+
 			claseBase = new ClaseBase(driver);
 			google = new PageObjectGoogleChrome(driver);
 			home = new PageObjectMercadoLibreHome(driver);
@@ -210,6 +230,7 @@ public class Run {
 			String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 			// CREAR CARPERTA PARA ALMECENAMIENTO DE IMAGENES
 			File rutaCarpeta = claseBase.crearCarpeta(nomTest);
+			logg.info("El caso de prueba : " + nomTest + "ha iniciado correctamente");
 			// VALIDAR SI SE GENERA EVIDENCIA
 			if (evidencia.equals("Si")) {
 				try {
@@ -219,23 +240,27 @@ public class Run {
 					// INICIA CREACION DE REPORTE PDF
 					generarReportePdf.crearPlantilla(nomTest, rutaCarpeta);
 					// ACCEDER AL METODO DE PRUEBA INICIAL
+					logg.info("El caso de prueba : " + nomTest + " tomara evidencias");
 					google.buscador(url, evidencia, rutaCarpeta);
 					cuenta.crearCuenta(evidencia, rutaCarpeta);
 					cuenta.formulario(nombre, apellido, documento, email, clave, evidencia, rutaCarpeta);
 					// FINALIZAR GRABACION DE VIDEO
 					MyScreenRecorder.stopRecording();
 					// FINALILZAR CREACION DEL REPORTE PDF
-					generarReportePdf.cerrarPlantilla();
+					generarReportePdf.cerrarPlantilla("La prueba fue Exitosa");
 					// driver.close();
 				} catch (Exception e) {
+					logg.error(e.toString());
 					// FINALIZAR GRABACION DE VIDEO
 					MyScreenRecorder.stopRecording();
 					// FINALILZAR CREACION DEL REPORTE PDF
-					generarReportePdf.cerrarPlantilla();
+					generarReportePdf.cerrarPlantilla("La prueba ha fallado");
+					Assert.assertFalse(true);
 					// driver.close();
 				}
-				
+
 			} else {
+				logg.info("La automatizacion " + nomTest + " no tomara evidencias");
 				System.out.println("No se tomaran evidencias para Mercado libre Crear Cuenta...");
 				// ACCEDER AL METODO DE PRUEBA INICIAL
 				google.buscador(url, evidencia, rutaCarpeta);
@@ -244,12 +269,13 @@ public class Run {
 			}
 
 		} else {
+			logg.info("El caso de prueba : Mercado Libre Crear Cuenta ha Fallado al iniciar");
 			System.out.println("La automatizacion no se ejecutara para Mercado libre Crear Cuenta...");
 		}
 	}
 
-	
-	//INGRESAR DESDE EL NAVEGADOR A DEMQA Y REALIZAR ACCIONAR LAS ALERTS PRESENTES
+	// INGRESAR DESDE EL NAVEGADOR A DEMO QA Y REALIZAR ACCIONAR LAS ALERTS
+	// PRESENTES
 	@DataProvider(name = "datosToolsAlerts")
 	public Object[][] datosToolsAlerts() throws Exception {
 		Object[][] arreglo = ExcelUtilidades.getTableArray("./Data/data.xlsx", "alertsTools");
@@ -260,11 +286,11 @@ public class Run {
 	@Test(dataProvider = "datosToolsAlerts", priority = 4)
 	public void alertTools(String url, String appPackage, String appActivity, String ejecutar, String evidencia,
 			String input) throws Exception {
-		
+
 		if (ejecutar.equals("Si")) {
 			driver = ClaseBase.appiumDriverConnetion(platformName, deviceName, platformVersion, appPackage, appActivity,
 					noReset, autoGrantPermissions);
-			
+
 			claseBase = new ClaseBase(driver);
 			google = new PageObjectGoogleChrome(driver);
 			alertsTools = new PageObjectAlertWindowsTools(driver);
@@ -273,6 +299,7 @@ public class Run {
 			String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 			// CREAR CARPERTA PARA ALMECENAMIENTO DE IMAGENES
 			File rutaCarpeta = claseBase.crearCarpeta(nomTest);
+			logg.info("El caso de prueba : " + nomTest + "ha iniciado correctamente");
 			// VALIDAR SI SE GENERA EVIDENCIA
 			if (evidencia.equals("Si")) {
 				try {
@@ -281,23 +308,27 @@ public class Run {
 					MyScreenRecorder.startRecording(nomTest, rutaCarpeta);
 					// INICIA CREACION DE REPORTE PDF
 					generarReportePdf.crearPlantilla(nomTest, rutaCarpeta);
+					logg.info("El caso de prueba : " + nomTest + " tomara evidencias");
 					// ACCEDER AL METODO DE PRUEBA INICIAL
 					google.buscador(url, evidencia, rutaCarpeta);
 					alertsTools.alertas(input, evidencia, rutaCarpeta);
 					// FINALIZAR GRABACION DE VIDEO
 					MyScreenRecorder.stopRecording();
 					// FINALILZAR CREACION DEL REPORTE PDF
-					generarReportePdf.cerrarPlantilla();
+					generarReportePdf.cerrarPlantilla("La prueba fue Exitosa");
 					// driver.close();
 				} catch (Exception e) {
+					logg.error(e.toString());
 					// FINALIZAR GRABACION DE VIDEO
 					MyScreenRecorder.stopRecording();
 					// FINALILZAR CREACION DEL REPORTE PDF
-					generarReportePdf.cerrarPlantilla();
+					generarReportePdf.cerrarPlantilla("La prueba ha fallado");
+					Assert.assertFalse(true);
 					// driver.close();
 				}
-				
+
 			} else {
+				logg.info("La automatizacion " + nomTest + " no tomara evidencias");
 				System.out.println("No se tomaran evidencias para Tools Alerts");
 				// ACCEDER AL METODO DE PRUEBA INICIAL
 				google.buscador(url, evidencia, rutaCarpeta);
@@ -305,12 +336,12 @@ public class Run {
 			}
 
 		} else {
+			logg.info("El caso de prueba : Tools Alerts ha Fallado al iniciar");
 			System.out.println("La automatizacion no se ejecutara para Tools Alerts...");
 		}
 	}
 
-	
-	//INGRESAR DESDE EL NAVEGADOR A DEMOQA HE INGRESAR DATA EN DATA PICKER
+	// INGRESAR DESDE EL NAVEGADOR A DEMOQA HE INGRESAR DATA EN DATA PICKER
 	@DataProvider(name = "datosToolsDate")
 	public Object[][] datosToolsDate() throws Exception {
 		Object[][] arreglo = ExcelUtilidades.getTableArray("./Data/data.xlsx", "date");
@@ -321,12 +352,13 @@ public class Run {
 	@Test(dataProvider = "datosToolsDate", priority = 4)
 	// INGRESAR A MERCADOLIBRE BUSCAR UN PRODUCTO, SELECCIONAR EL PRIMERO Y GREAR
 	// UNA CUENTA
-	public void dateTools(String url, String appPackage, String appActivity, String ejecutar, String evidencia) throws Exception {
-		
+	public void dateTools(String url, String appPackage, String appActivity, String ejecutar, String evidencia)
+			throws Exception {
+
 		if (ejecutar.equals("Si")) {
 			driver = ClaseBase.appiumDriverConnetion(platformName, deviceName, platformVersion, appPackage, appActivity,
 					noReset, autoGrantPermissions);
-			
+
 			claseBase = new ClaseBase(driver);
 			google = new PageObjectGoogleChrome(driver);
 			dateTools = new PageObjectToolsDatePicker(driver);
@@ -335,6 +367,7 @@ public class Run {
 			String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 			// CREAR CARPERTA PARA ALMECENAMIENTO DE IMAGENES
 			File rutaCarpeta = claseBase.crearCarpeta(nomTest);
+			logg.info("El caso de prueba : " + nomTest + "ha iniciado correctamente");
 			// VALIDAR SI SE GENERA EVIDENCIA
 			if (evidencia.equals("Si")) {
 				try {
@@ -343,23 +376,27 @@ public class Run {
 					MyScreenRecorder.startRecording(nomTest, rutaCarpeta);
 					// INICIA CREACION DE REPORTE PDF
 					generarReportePdf.crearPlantilla(nomTest, rutaCarpeta);
+					logg.info("El caso de prueba : " + nomTest + " tomara evidencias");
 					// ACCEDER AL METODO DE PRUEBA INICIAL
 					google.buscador(url, evidencia, rutaCarpeta);
 					dateTools.sistemaDate(rutaCarpeta, evidencia);
 					// FINALIZAR GRABACION DE VIDEO
 					MyScreenRecorder.stopRecording();
 					// FINALILZAR CREACION DEL REPORTE PDF
-					generarReportePdf.cerrarPlantilla();
+					generarReportePdf.cerrarPlantilla("La prueba fue Exitosa");
 					// driver.close();
 				} catch (Exception e) {
+					logg.error(e.toString());
 					// FINALIZAR GRABACION DE VIDEO
 					MyScreenRecorder.stopRecording();
 					// FINALILZAR CREACION DEL REPORTE PDF
-					generarReportePdf.cerrarPlantilla();
+					generarReportePdf.cerrarPlantilla("La prueba ha fallado");
+					Assert.assertFalse(true);
 					// driver.close();
 				}
-				
+
 			} else {
+				logg.info("La automatizacion " + nomTest + " no tomara evidencias");
 				System.out.println("No se tomaran evidencias para Tools Date");
 				// ACCEDER AL METODO DE PRUEBA INICIAL
 				google.buscador(url, evidencia, rutaCarpeta);
@@ -367,6 +404,7 @@ public class Run {
 			}
 
 		} else {
+			logg.info("El caso de prueba : Tools Date ha Fallado al iniciar");
 			System.out.println("La automatizacion no se ejecutara para Tools Date...");
 		}
 	}
@@ -375,6 +413,6 @@ public class Run {
 	public void afterClass() {
 		driver.quit();
 		driver.close();
-		
+
 	}
 }
