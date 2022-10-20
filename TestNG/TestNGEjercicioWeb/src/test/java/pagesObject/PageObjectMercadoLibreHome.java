@@ -25,30 +25,30 @@ public void busquedaInicial(String producto, File rutaCarpeta, String evidencia)
 {
 	// INGRESAR ACCIONES
 	//LIMPIAR CUADRO DE TEXTO
-	borrar(txtBusqueda, rutaCarpeta, evidencia);
+	borrar(txtBusqueda, rutaCarpeta, evidencia,"Se ingresa al cuadro de busqueda de la pagina pricipal" );
 	//ENVIAR PRODUCTO DESDE EL EXCEL
-	sendKey(producto, txtBusqueda, rutaCarpeta, evidencia);
+	sendKey(producto, txtBusqueda, rutaCarpeta, evidencia, "Se ingresa el producto a buscar");
 	//SUMIT PARA BUSCAR EL PRODUCTO
-	submit(txtBusqueda, rutaCarpeta, evidencia);
+	submit(txtBusqueda, rutaCarpeta, evidencia, "Se le da Submit para busacr el producto");
 	//ACEPTAR COOKIES
-	validacion(cookies, rutaCarpeta, evidencia);
+	validacion(cookies, rutaCarpeta, evidencia,"Se aceptan las Cookies");
 	// GESTIONAR UBICACION
-	validacion(ubicacion, rutaCarpeta, evidencia);
+	validacion(ubicacion, rutaCarpeta, evidencia, "Se cierra el cuadro de la ubicacion");
 	//ELEGIR PRIMER EXCRITORIO
-	click(primerProducto, rutaCarpeta, evidencia);
+	click(primerProducto, rutaCarpeta, evidencia, "Se elige el primer producto");
 	//AGREGAR AL CARRITO
-	click(agregarCarrito, rutaCarpeta, evidencia);	
+	click(agregarCarrito, rutaCarpeta, evidencia, "Se clickea el boton Agregar al Carrito");	
 	//CREAR CUENTA
-	click(crearCuenta, rutaCarpeta, evidencia);
+	click(crearCuenta, rutaCarpeta, evidencia, "Se da click en Crear Cuenta");
 	
 }
 
 public void crearCuentaBtn(File rutaCarpeta, String evidencia) throws Exception
 {		
 	//CLICKEAR BOTON CREA TU CUENTA
-	click(crearCuentaButton, rutaCarpeta, evidencia);
+	click(crearCuentaButton, rutaCarpeta, evidencia, "Se selecciona la opcion Crea tu Cuenta");
 	//ACEPTAR COOKIES
-	validacion(cookies, rutaCarpeta, evidencia);
+	validacion(cookies, rutaCarpeta, evidencia,"Se aceptan las Cookies");
 	
 }
   

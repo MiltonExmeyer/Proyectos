@@ -5,14 +5,11 @@ import claseBase.ClaseBase;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
-public class MapObjectAlertWindowsTools extends ClaseBase
-{
+public class MapObjectAlertWindowsTools extends ClaseBase {
 
-	public MapObjectAlertWindowsTools(AppiumDriver<MobileElement> driver) 
-	{
+	public MapObjectAlertWindowsTools(AppiumDriver<MobileElement> driver) {
 		super(driver);
 	}
-	
 
 	// ELEMENTOS DE LA PAG
 	protected By btnAlertsFrame = By.xpath("//android.widget.TextView[@text='Alerts, Frame & Windows']");
@@ -28,5 +25,8 @@ public class MapObjectAlertWindowsTools extends ClaseBase
 	protected By btnCancelar = By.xpath("//android.widget.Button[@text='Cancelar']");
 	// ALERT 4
 	protected By btnAlertsName = By.xpath("//android.widget.Button[@resource-id='promtButton']");
-	protected By txtInput = By.xpath("//android.widget.EditText[@resource-id='com.android.chrome:id/js_modal_dialog_prompt']");
+	protected By txtInput = By
+			.xpath("//android.widget.EditText[@resource-id='com.android.chrome:id/js_modal_dialog_prompt']");
+	// XPATH PARA REALIZAR ASSERT
+	protected By txtResultado = By.xpath("//android.widget.TextView[@text='You entered Hoy trasnoche']");
 }

@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>4/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>5/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Oct 10 08:12:50 COT 2022</td>
+<td>Started on:</td><td>Thu Oct 20 11:50:27 COT 2022</td>
 </tr>
-<tr><td>Total time:</td><td>32 seconds (32905 ms)</td>
+<tr><td>Total time:</td><td>29 seconds (29376 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -87,10 +87,10 @@ Driver info: driver.version: RemoteWebDriver
 	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
 	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
 	at org.openqa.selenium.remote.RemoteWebDriver.close(RemoteWebDriver.java:442)
-	at run.Run.afterClass(Run.java:377)
+	at run.Run.afterClass(Run.java:415)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2085952212", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2085952212'><pre>org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace541135648", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace541135648'><pre>org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;PE-HO-012&apos;, ip: &apos;192.168.10.11&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;19&apos;
 Driver info: driver.version: RemoteWebDriver
@@ -101,7 +101,7 @@ Driver info: driver.version: RemoteWebDriver
 	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
 	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
 	at org.openqa.selenium.remote.RemoteWebDriver.close(RemoteWebDriver.java:442)
-	at run.Run.afterClass(Run.java:377)
+	at run.Run.afterClass(Run.java:415)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
@@ -128,59 +128,7 @@ Driver info: driver.version: RemoteWebDriver
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>0</td>
-<td>run.Run@498d318c</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='run.Run.calculadora()'><b>calculadora</b><br>Test class: run.Run<br>Parameters: com.google.android.calculator, com.android.calculator2.Calculator, Si, Si, más, 10, 40, 55</td>
-<td><div><pre>java.lang.AssertionError: El resultado es diferente al esperado expected [55] but found [50]
-	at pagesObject.PageOBjectCalculadora.operaciones(PageOBjectCalculadora.java:33)
-	at run.Run.calculadora(Run.java:101)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1363989824", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1363989824'><pre>java.lang.AssertionError: El resultado es diferente al esperado expected [55] but found [50]
-	at org.testng.Assert.fail(Assert.java:99)
-	at org.testng.Assert.failNotEquals(Assert.java:1037)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
-	at org.testng.Assert.assertEquals(Assert.java:122)
-	at org.testng.Assert.assertEquals(Assert.java:629)
-	at pagesObject.PageOBjectCalculadora.operaciones(PageOBjectCalculadora.java:33)
-	at run.Run.calculadora(Run.java:101)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>31</td>
-<td>run.Run@498d318c</td></tr>
+<td>run.Run@bcec361</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -193,22 +141,27 @@ Driver info: driver.version: RemoteWebDriver
 <td title='run.Run.seleccionarPrimerProducto()'><b>seleccionarPrimerProducto</b><br>Test class: run.Run<br>Parameters: https://www.mercadolibre.com.pe, com.android.chrome, com.google.android.apps.chrome.Main, No, Si, silla, milton, guzman, 123456789, registro@cbit.com, periferia</td>
 <td></td>
 <td>0</td>
-<td>run.Run@498d318c</td></tr>
+<td>run.Run@bcec361</td></tr>
 <tr>
-<td title='run.Run.crearCuenta()'><b>crearCuenta</b><br>Test class: run.Run<br>Parameters: https://www.mercadolibre.com.pe, com.android.chrome, com.google.android.apps.chrome.Main, No, No, milton, guzman, 123456789, registro@cbit.com, periferia</td>
+<td title='run.Run.crearCuenta()'><b>crearCuenta</b><br>Test class: run.Run<br>Parameters: https://www.mercadolibre.com.pe, com.android.chrome, com.google.android.apps.chrome.Main, No, Si, milton, guzman, 123456789, registro@cbit.com, periferia</td>
 <td></td>
 <td>0</td>
-<td>run.Run@498d318c</td></tr>
-<tr>
-<td title='run.Run.dateTools()'><b>dateTools</b><br>Test class: run.Run<br>Parameters: https://demoqa.com, com.android.chrome, com.google.android.apps.chrome.Main, No, Si</td>
-<td></td>
-<td>0</td>
-<td>run.Run@498d318c</td></tr>
+<td>run.Run@bcec361</td></tr>
 <tr>
 <td title='run.Run.alertTools()'><b>alertTools</b><br>Test class: run.Run<br>Parameters: https://demoqa.com, com.android.chrome, com.google.android.apps.chrome.Main, No, Si, Hoy trasnoche</td>
 <td></td>
 <td>0</td>
-<td>run.Run@498d318c</td></tr>
+<td>run.Run@bcec361</td></tr>
+<tr>
+<td title='run.Run.calculadora()'><b>calculadora</b><br>Test class: run.Run<br>Parameters: com.google.android.calculator, com.android.calculator2.Calculator, Si, Si, más, 10, 40, 55</td>
+<td></td>
+<td>27</td>
+<td>run.Run@bcec361</td></tr>
+<tr>
+<td title='run.Run.dateTools()'><b>dateTools</b><br>Test class: run.Run<br>Parameters: https://demoqa.com, com.android.chrome, com.google.android.apps.chrome.Main, No, Si</td>
+<td></td>
+<td>0</td>
+<td>run.Run@bcec361</td></tr>
 </table><p>
 </body>
 </html>

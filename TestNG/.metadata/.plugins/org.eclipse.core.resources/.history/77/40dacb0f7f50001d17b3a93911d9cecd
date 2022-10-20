@@ -1,0 +1,393 @@
+17:18:17 [main] INFO  run.Run - El caso de prueba : seleccionarPrimerProductoha iniciado correctamente
+17:18:17 [main] INFO  run.Run - El caso de prueba : seleccionarPrimerProducto tomara evidencias
+17:42:43 [main] INFO  run.Run - NAVEGADOR INICIA DE FORMA CORRECTA
+17:42:44 [main] INFO  run.Run - El caso de prueba : seleccionarPrimerProductoha iniciado correctamente
+17:42:44 [main] INFO  run.Run - El caso de prueba : seleccionarPrimerProducto tomara evidencias
+17:42:46 [main] INFO  run.Run - Se borra el texto de txt : By.id: cb1-edit
+17:42:47 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.id: cb1-edit
+17:42:49 [main] INFO  run.Run - Sen realiza Submit en el elemento : By.id: cb1-edit
+17:42:50 [main] INFO  run.Run - Elemento visible : By.xpath: //button[text() = 'Entendido']
+17:42:52 [main] INFO  run.Run - Elemento visible : By.xpath: //button[@class = 'andes-tooltip-button-close']
+17:42:55 [main] INFO  run.Run - Localizador correcto : By.xpath: (//img[@class='ui-search-result-image__element shops__image-element'])[1]
+17:42:57 [main] INFO  run.Run - Localizador correcto : By.xpath: //button[ @class='andes-button andes-spinner__icon-base andes-button--quiet']//span[text()='Agregar al carrito']
+17:42:59 [main] INFO  run.Run - Localizador correcto : By.xpath: //span[text()='Crear cuenta']
+17:43:00 [main] INFO  run.Run - Localizador correcto : By.id: terms-and-conds
+17:43:02 [main] INFO  run.Run - Localizador correcto : By.xpath: //span[text()='Continuar']
+17:43:03 [main] INFO  run.Run - Localizador correcto : By.xpath: //span[text()='Validar']
+17:43:04 [main] INFO  run.Run - Se borra el texto de txt : By.xpath: //input[@class='andes-form-control__field']
+17:43:04 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.xpath: //input[@class='andes-form-control__field']
+17:43:09 [main] INFO  run.Run - El caso de prueba : crearCuentaha iniciado correctamente
+17:43:09 [main] INFO  run.Run - El caso de prueba : crearCuenta tomara evidencias
+17:43:12 [main] INFO  run.Run - Localizador correcto : By.xpath: //a[@data-link-id='registration']
+17:43:12 [main] ERROR run.Run - org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[text() = 'Entendido']"}
+  (Session info: chrome=106.0.5249.119)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'PE-HO-012', ip: '192.168.10.11', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [4962f936608bc8bf678b0ee9b8e49788, findElement {using=xpath, value=//button[text() = 'Entendido']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\MILTON~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:53585}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53585/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 4962f936608bc8bf678b0ee9b8e49788
+17:43:13 [main] INFO  run.Run - Localizador correcto : By.id: terms-and-conds
+17:43:15 [main] INFO  run.Run - Localizador correcto : By.xpath: //span[text()='Continuar']
+17:43:16 [main] INFO  run.Run - Localizador correcto : By.xpath: //span[text()='Validar']
+17:43:17 [main] INFO  run.Run - Se borra el texto de txt : By.xpath: //input[@class='andes-form-control__field']
+17:43:17 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.xpath: //input[@class='andes-form-control__field']
+17:43:22 [main] INFO  run.Run - El caso de prueba : alertsToolsha iniciado correctamente
+17:43:22 [main] INFO  run.Run - El caso de prueba : alertsTools tomara evidencias
+17:43:26 [main] INFO  run.Run - Se realiza escroll vertical de 200 pixeles1 cantidad de veces
+17:43:29 [main] INFO  run.Run - Se realiza escroll vertical de 200 pixeles1 cantidad de veces
+17:43:55 [main] INFO  run.Run - Se realiza escroll vertical de 200 pixeles1 cantidad de veces
+17:44:01 [main] INFO  run.Run - El caso de prueba : dateToolsha iniciado correctamente
+17:44:02 [main] INFO  run.Run - El caso de prueba : dateTools tomara evidencias
+17:44:03 [main] INFO  run.Run - Se realiza escroll vertical de 200 pixeles1 cantidad de veces
+17:44:06 [main] INFO  run.Run - Se realiza escroll vertical de 210 pixeles1 cantidad de veces
+17:44:10 [main] INFO  run.Run - Se borra el texto de txt : By.id: datePickerMonthYearInput
+17:44:10 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.id: datePickerMonthYearInput
+17:44:13 [main] INFO  run.Run - Se borra el texto de txt : By.id: dateAndTimePickerInput
+17:44:13 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.id: dateAndTimePickerInput
+17:44:16 [main] INFO  run.Run - El caso de prueba : mercuryToursha iniciado correctamente
+17:44:16 [main] INFO  run.Run - El caso de prueba : mercuryTours tomara evidencias
+17:44:19 [main] INFO  run.Run - Localizador correcto : By.xpath: //*[text()='REGISTER']
+17:44:20 [main] INFO  run.Run - Se borra el texto de txt : By.name: firstName
+17:44:20 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: firstName
+17:44:20 [main] INFO  run.Run - Se borra el texto de txt : By.name: lastName
+17:44:21 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: lastName
+17:44:21 [main] INFO  run.Run - Se borra el texto de txt : By.name: phone
+17:44:21 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: phone
+17:44:21 [main] INFO  run.Run - Se borra el texto de txt : By.id: userName
+17:44:22 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.id: userName
+17:44:22 [main] INFO  run.Run - Se borra el texto de txt : By.name: address1
+17:44:22 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: address1
+17:44:22 [main] INFO  run.Run - Se borra el texto de txt : By.name: city
+17:44:23 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: city
+17:44:23 [main] INFO  run.Run - Se borra el texto de txt : By.name: state
+17:44:23 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: state
+17:44:23 [main] INFO  run.Run - Se borra el texto de txt : By.name: postalCode
+17:44:24 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: postalCode
+17:44:24 [main] INFO  run.Run - Se borra el texto de txt : By.id: email
+17:44:24 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.id: email
+17:44:24 [main] INFO  run.Run - Se borra el texto de txt : By.name: password
+17:44:25 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: password
+17:44:25 [main] INFO  run.Run - Se borra el texto de txt : By.name: confirmPassword
+17:44:25 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: confirmPassword
+17:44:29 [main] INFO  run.Run - Localizador correcto : By.name: submit
+08:32:38 [main] INFO  run.Run - NAVEGADOR INICIA DE FORMA CORRECTA
+08:32:39 [main] INFO  run.Run - El caso de prueba : seleccionarPrimerProductoha iniciado correctamente
+08:32:40 [main] INFO  run.Run - El caso de prueba : seleccionarPrimerProducto tomara evidencias
+08:32:43 [main] INFO  run.Run - Se borra el texto de txt : By.id: cb1-edit
+08:32:43 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.id: cb1-edit
+08:32:46 [main] INFO  run.Run - Sen realiza Submit en el elemento : By.id: cb1-edit
+08:32:47 [main] INFO  run.Run - Elemento visible : By.xpath: //button[text() = 'Entendido']
+08:32:49 [main] INFO  run.Run - Elemento visible : By.xpath: //button[@class = 'andes-tooltip-button-close']
+08:32:52 [main] INFO  run.Run - Localizador correcto : By.xpath: (//img[@class='ui-search-result-image__element shops__image-element'])[1]
+08:32:54 [main] INFO  run.Run - Localizador correcto : By.xpath: //button[ @class='andes-button andes-spinner__icon-base andes-button--quiet']//span[text()='Agregar al carrito']
+08:32:56 [main] INFO  run.Run - Localizador correcto : By.xpath: //span[text()='Crear cuenta']
+08:32:57 [main] INFO  run.Run - Localizador correcto : By.id: terms-and-conds
+08:32:59 [main] INFO  run.Run - Localizador correcto : By.xpath: //span[text()='Continuar']
+08:33:01 [main] INFO  run.Run - Localizador correcto : By.xpath: //span[text()='Validar']
+08:33:01 [main] INFO  run.Run - Se borra el texto de txt : By.xpath: //input[@class='andes-form-control__field']
+08:33:01 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.xpath: //input[@class='andes-form-control__field']
+08:33:07 [main] INFO  run.Run - El caso de prueba : crearCuentaha iniciado correctamente
+08:33:07 [main] INFO  run.Run - El caso de prueba : crearCuenta tomara evidencias
+08:33:10 [main] INFO  run.Run - Localizador correcto : By.xpath: //a[@data-link-id='registration']
+08:33:10 [main] ERROR run.Run - org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[text() = 'Entendido']"}
+  (Session info: chrome=106.0.5249.119)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'PE-HO-012', ip: '192.168.10.11', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [1ae8aa3ed5f371710a3106b2dc880d8f, findElement {using=xpath, value=//button[text() = 'Entendido']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\MILTON~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59855}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59855/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 1ae8aa3ed5f371710a3106b2dc880d8f
+08:33:11 [main] INFO  run.Run - Localizador correcto : By.id: terms-and-conds
+08:33:13 [main] INFO  run.Run - Localizador correcto : By.xpath: //span[text()='Continuar']
+08:33:14 [main] INFO  run.Run - Localizador correcto : By.xpath: //span[text()='Validar']
+08:33:15 [main] INFO  run.Run - Se borra el texto de txt : By.xpath: //input[@class='andes-form-control__field']
+08:33:15 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.xpath: //input[@class='andes-form-control__field']
+08:33:20 [main] INFO  run.Run - El caso de prueba : alertsToolsha iniciado correctamente
+08:33:20 [main] INFO  run.Run - El caso de prueba : alertsTools tomara evidencias
+08:33:30 [main] INFO  run.Run - Se realiza escroll vertical de 200 pixeles1 cantidad de veces
+08:33:34 [main] INFO  run.Run - Se realiza escroll vertical de 200 pixeles1 cantidad de veces
+08:34:00 [main] INFO  run.Run - Se realiza escroll vertical de 200 pixeles1 cantidad de veces
+08:34:07 [main] INFO  run.Run - El caso de prueba : dateToolsha iniciado correctamente
+08:34:07 [main] INFO  run.Run - El caso de prueba : dateTools tomara evidencias
+08:34:08 [main] INFO  run.Run - Se realiza escroll vertical de 200 pixeles1 cantidad de veces
+08:34:11 [main] INFO  run.Run - Se realiza escroll vertical de 210 pixeles1 cantidad de veces
+08:34:15 [main] INFO  run.Run - Se borra el texto de txt : By.id: datePickerMonthYearInput
+08:34:16 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.id: datePickerMonthYearInput
+08:34:18 [main] ERROR run.Run - java.lang.InterruptedException
+08:34:18 [main] INFO  run.Run - El caso de prueba : mercuryToursha iniciado correctamente
+08:34:18 [main] INFO  run.Run - El caso de prueba : mercuryTours tomara evidencias
+08:34:21 [main] INFO  run.Run - Localizador correcto : By.xpath: //*[text()='REGISTER']
+08:34:23 [main] INFO  run.Run - Se borra el texto de txt : By.name: firstName
+08:34:23 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: firstName
+08:34:23 [main] INFO  run.Run - Se borra el texto de txt : By.name: lastName
+08:34:24 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: lastName
+08:34:24 [main] INFO  run.Run - Se borra el texto de txt : By.name: phone
+08:34:24 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: phone
+08:34:25 [main] INFO  run.Run - Se borra el texto de txt : By.id: userName
+08:34:25 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.id: userName
+08:34:25 [main] INFO  run.Run - Se borra el texto de txt : By.name: address1
+08:34:26 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: address1
+08:34:26 [main] INFO  run.Run - Se borra el texto de txt : By.name: city
+08:34:26 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: city
+08:34:27 [main] INFO  run.Run - Se borra el texto de txt : By.name: state
+08:34:27 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: state
+08:34:27 [main] INFO  run.Run - Se borra el texto de txt : By.name: postalCode
+08:34:27 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: postalCode
+08:34:28 [main] INFO  run.Run - Se borra el texto de txt : By.id: email
+08:34:28 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.id: email
+08:34:29 [main] INFO  run.Run - Se borra el texto de txt : By.name: password
+08:34:29 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: password
+08:34:29 [main] INFO  run.Run - Se borra el texto de txt : By.name: confirmPassword
+08:34:30 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: confirmPassword
+08:34:34 [main] INFO  run.Run - Localizador correcto : By.name: submit
+08:36:07 [main] INFO  run.Run - NAVEGADOR INICIA DE FORMA CORRECTA
+08:36:08 [main] INFO  run.Run - El caso de prueba : seleccionarPrimerProductoha iniciado correctamente
+08:36:09 [main] INFO  run.Run - El caso de prueba : seleccionarPrimerProducto tomara evidencias
+08:36:11 [main] INFO  run.Run - Se borra el texto de txt : By.id: cb1-edit
+08:36:12 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.id: cb1-edit
+08:36:15 [main] INFO  run.Run - Sen realiza Submit en el elemento : By.id: cb1-edit
+08:36:16 [main] INFO  run.Run - Elemento visible : By.xpath: //button[text() = 'Entendido']
+08:36:18 [main] INFO  run.Run - Elemento visible : By.xpath: //button[@class = 'andes-tooltip-button-close']
+08:36:20 [main] INFO  run.Run - Localizador correcto : By.xpath: (//img[@class='ui-search-result-image__element shops__image-element'])[1]
+08:36:23 [main] INFO  run.Run - Localizador correcto : By.xpath: //button[ @class='andes-button andes-spinner__icon-base andes-button--quiet']//span[text()='Agregar al carrito']
+08:36:25 [main] INFO  run.Run - Localizador correcto : By.xpath: //span[text()='Crear cuenta']
+08:36:26 [main] INFO  run.Run - Localizador correcto : By.id: terms-and-conds
+08:36:28 [main] INFO  run.Run - Localizador correcto : By.xpath: //span[text()='Continuar']
+08:36:30 [main] INFO  run.Run - Localizador correcto : By.xpath: //span[text()='Validar']
+08:36:30 [main] INFO  run.Run - Se borra el texto de txt : By.xpath: //input[@class='andes-form-control__field']
+08:36:30 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.xpath: //input[@class='andes-form-control__field']
+08:36:36 [main] INFO  run.Run - El caso de prueba : crearCuentaha iniciado correctamente
+08:36:36 [main] INFO  run.Run - El caso de prueba : crearCuenta tomara evidencias
+08:36:39 [main] INFO  run.Run - Localizador correcto : By.xpath: //a[@data-link-id='registration']
+08:36:39 [main] ERROR run.Run - org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[text() = 'Entendido']"}
+  (Session info: chrome=106.0.5249.119)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'PE-HO-012', ip: '192.168.10.11', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [2b212c34b264c494366adddfc71e763e, findElement {using=xpath, value=//button[text() = 'Entendido']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\MILTON~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59977}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59977/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 2b212c34b264c494366adddfc71e763e
+08:36:40 [main] INFO  run.Run - Localizador correcto : By.id: terms-and-conds
+08:36:42 [main] INFO  run.Run - Localizador correcto : By.xpath: //span[text()='Continuar']
+08:36:42 [main] ERROR run.Run - org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='Validar']"}
+  (Session info: chrome=106.0.5249.119)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'PE-HO-012', ip: '192.168.10.11', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [2b212c34b264c494366adddfc71e763e, findElement {using=xpath, value=//span[text()='Validar']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\MILTON~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59977}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59977/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 2b212c34b264c494366adddfc71e763e
+08:36:42 [main] ERROR run.Run - java.lang.InterruptedException
+08:36:42 [main] INFO  run.Run - El caso de prueba : alertsToolsha iniciado correctamente
+08:36:42 [main] INFO  run.Run - El caso de prueba : alertsTools tomara evidencias
+08:36:50 [main] INFO  run.Run - Se realiza escroll vertical de 200 pixeles1 cantidad de veces
+08:36:53 [main] INFO  run.Run - Se realiza escroll vertical de 200 pixeles1 cantidad de veces
+08:37:20 [main] INFO  run.Run - Se realiza escroll vertical de 200 pixeles1 cantidad de veces
+08:37:27 [main] INFO  run.Run - El caso de prueba : dateToolsha iniciado correctamente
+08:37:27 [main] INFO  run.Run - El caso de prueba : dateTools tomara evidencias
+08:37:28 [main] INFO  run.Run - Se realiza escroll vertical de 200 pixeles1 cantidad de veces
+08:37:31 [main] INFO  run.Run - Se realiza escroll vertical de 210 pixeles1 cantidad de veces
+08:37:35 [main] INFO  run.Run - Se borra el texto de txt : By.id: datePickerMonthYearInput
+08:37:36 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.id: datePickerMonthYearInput
+08:37:37 [main] ERROR run.Run - java.lang.InterruptedException
+08:37:38 [main] INFO  run.Run - El caso de prueba : mercuryToursha iniciado correctamente
+08:37:38 [main] INFO  run.Run - El caso de prueba : mercuryTours tomara evidencias
+08:37:41 [main] INFO  run.Run - Localizador correcto : By.xpath: //*[text()='REGISTER']
+08:37:42 [main] INFO  run.Run - Se borra el texto de txt : By.name: firstName
+08:37:43 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: firstName
+08:37:43 [main] INFO  run.Run - Se borra el texto de txt : By.name: lastName
+08:37:43 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: lastName
+08:37:44 [main] INFO  run.Run - Se borra el texto de txt : By.name: phone
+08:37:44 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: phone
+08:37:44 [main] INFO  run.Run - Se borra el texto de txt : By.id: userName
+08:37:45 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.id: userName
+08:37:45 [main] INFO  run.Run - Se borra el texto de txt : By.name: address1
+08:37:45 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: address1
+08:37:46 [main] INFO  run.Run - Se borra el texto de txt : By.name: city
+08:37:46 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: city
+08:37:46 [main] INFO  run.Run - Se borra el texto de txt : By.name: state
+08:37:47 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: state
+08:37:47 [main] INFO  run.Run - Se borra el texto de txt : By.name: postalCode
+08:37:47 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: postalCode
+08:37:48 [main] INFO  run.Run - Se borra el texto de txt : By.id: email
+08:37:48 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.id: email
+08:37:48 [main] INFO  run.Run - Se borra el texto de txt : By.name: password
+08:37:49 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: password
+08:37:49 [main] INFO  run.Run - Se borra el texto de txt : By.name: confirmPassword
+08:37:49 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: confirmPassword
+08:37:53 [main] INFO  run.Run - Localizador correcto : By.name: submit
+08:39:37 [main] INFO  run.Run - NAVEGADOR INICIA DE FORMA CORRECTA
+08:39:38 [main] INFO  run.Run - El caso de prueba : seleccionarPrimerProductoha iniciado correctamente
+08:39:39 [main] INFO  run.Run - El caso de prueba : seleccionarPrimerProducto tomara evidencias
+08:39:41 [main] INFO  run.Run - Se borra el texto de txt : By.id: cb1-edit
+08:39:41 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.id: cb1-edit
+08:39:44 [main] INFO  run.Run - Sen realiza Submit en el elemento : By.id: cb1-edit
+08:39:46 [main] INFO  run.Run - Elemento visible : By.xpath: //button[text() = 'Entendido']
+08:39:47 [main] INFO  run.Run - Elemento visible : By.xpath: //button[@class = 'andes-tooltip-button-close']
+08:39:50 [main] INFO  run.Run - Localizador correcto : By.xpath: (//img[@class='ui-search-result-image__element shops__image-element'])[1]
+08:39:52 [main] INFO  run.Run - Localizador correcto : By.xpath: //button[ @class='andes-button andes-spinner__icon-base andes-button--quiet']//span[text()='Agregar al carrito']
+08:39:54 [main] INFO  run.Run - Localizador correcto : By.xpath: //span[text()='Crear cuenta']
+08:39:56 [main] INFO  run.Run - Localizador correcto : By.id: terms-and-conds
+08:39:57 [main] INFO  run.Run - Localizador correcto : By.xpath: //span[text()='Continuar']
+08:39:59 [main] INFO  run.Run - Localizador correcto : By.xpath: //span[text()='Validar']
+08:39:59 [main] INFO  run.Run - Se borra el texto de txt : By.xpath: //input[@class='andes-form-control__field']
+08:40:00 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.xpath: //input[@class='andes-form-control__field']
+08:40:05 [main] INFO  run.Run - El caso de prueba : crearCuentaha iniciado correctamente
+08:40:05 [main] INFO  run.Run - El caso de prueba : crearCuenta tomara evidencias
+08:40:08 [main] INFO  run.Run - Localizador correcto : By.xpath: //a[@data-link-id='registration']
+08:40:08 [main] ERROR run.Run - org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[text() = 'Entendido']"}
+  (Session info: chrome=106.0.5249.119)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'PE-HO-012', ip: '192.168.10.11', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b4258404173d5436e1c1194d9c434dc7, findElement {using=xpath, value=//button[text() = 'Entendido']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\MILTON~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:60117}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60117/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: b4258404173d5436e1c1194d9c434dc7
+08:40:09 [main] INFO  run.Run - Localizador correcto : By.id: terms-and-conds
+08:40:11 [main] INFO  run.Run - Localizador correcto : By.xpath: //span[text()='Continuar']
+08:40:11 [main] ERROR run.Run - org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='Validar']"}
+  (Session info: chrome=106.0.5249.119)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'PE-HO-012', ip: '192.168.10.11', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b4258404173d5436e1c1194d9c434dc7, findElement {using=xpath, value=//span[text()='Validar']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\MILTON~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:60117}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60117/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: b4258404173d5436e1c1194d9c434dc7
+08:40:11 [main] ERROR run.Run - java.lang.InterruptedException
+08:40:11 [main] INFO  run.Run - El caso de prueba : alertsToolsha iniciado correctamente
+08:40:11 [main] INFO  run.Run - El caso de prueba : alertsTools tomara evidencias
+08:40:16 [main] INFO  run.Run - Se realiza escroll vertical de 200 pixeles1 cantidad de veces
+08:40:20 [main] INFO  run.Run - Se realiza escroll vertical de 200 pixeles1 cantidad de veces
+08:40:46 [main] INFO  run.Run - Se realiza escroll vertical de 200 pixeles1 cantidad de veces
+08:40:53 [main] INFO  run.Run - El caso de prueba : dateToolsha iniciado correctamente
+08:40:53 [main] INFO  run.Run - El caso de prueba : dateTools tomara evidencias
+08:40:54 [main] INFO  run.Run - Se realiza escroll vertical de 200 pixeles1 cantidad de veces
+08:40:57 [main] INFO  run.Run - Se realiza escroll vertical de 210 pixeles1 cantidad de veces
+08:41:02 [main] INFO  run.Run - Se borra el texto de txt : By.id: datePickerMonthYearInput
+08:41:02 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.id: datePickerMonthYearInput
+08:41:07 [main] INFO  run.Run - Se borra el texto de txt : By.id: dateAndTimePickerInput
+08:41:07 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.id: dateAndTimePickerInput
+08:41:10 [main] INFO  run.Run - El caso de prueba : mercuryToursha iniciado correctamente
+08:41:10 [main] INFO  run.Run - El caso de prueba : mercuryTours tomara evidencias
+08:41:13 [main] INFO  run.Run - Localizador correcto : By.xpath: //*[text()='REGISTER']
+08:41:15 [main] INFO  run.Run - Se borra el texto de txt : By.name: firstName
+08:41:15 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: firstName
+08:41:15 [main] INFO  run.Run - Se borra el texto de txt : By.name: lastName
+08:41:16 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: lastName
+08:41:16 [main] INFO  run.Run - Se borra el texto de txt : By.name: phone
+08:41:16 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: phone
+08:41:16 [main] INFO  run.Run - Se borra el texto de txt : By.id: userName
+08:41:17 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.id: userName
+08:41:17 [main] INFO  run.Run - Se borra el texto de txt : By.name: address1
+08:41:17 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: address1
+08:41:18 [main] INFO  run.Run - Se borra el texto de txt : By.name: city
+08:41:18 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: city
+08:41:18 [main] INFO  run.Run - Se borra el texto de txt : By.name: state
+08:41:19 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: state
+08:41:19 [main] INFO  run.Run - Se borra el texto de txt : By.name: postalCode
+08:41:19 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: postalCode
+08:41:20 [main] INFO  run.Run - Se borra el texto de txt : By.id: email
+08:41:20 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.id: email
+08:41:20 [main] INFO  run.Run - Se borra el texto de txt : By.name: password
+08:41:21 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: password
+08:41:21 [main] INFO  run.Run - Se borra el texto de txt : By.name: confirmPassword
+08:41:21 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: confirmPassword
+08:41:27 [main] INFO  run.Run - Localizador correcto : By.name: submit
+08:46:43 [main] INFO  run.Run - NAVEGADOR INICIA DE FORMA CORRECTA
+08:46:44 [main] INFO  run.Run - El caso de prueba : seleccionarPrimerProductoha iniciado correctamente
+08:46:45 [main] INFO  run.Run - El caso de prueba : seleccionarPrimerProducto tomara evidencias
+08:46:47 [main] INFO  run.Run - Se borra el texto de txt : By.id: cb1-edit
+08:46:47 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.id: cb1-edit
+08:46:50 [main] INFO  run.Run - Sen realiza Submit en el elemento : By.id: cb1-edit
+08:46:51 [main] INFO  run.Run - Elemento visible : By.xpath: //button[text() = 'Entendido']
+08:46:53 [main] INFO  run.Run - Elemento visible : By.xpath: //button[@class = 'andes-tooltip-button-close']
+08:46:55 [main] INFO  run.Run - Localizador correcto : By.xpath: (//img[@class='ui-search-result-image__element shops__image-element'])[1]
+08:46:58 [main] INFO  run.Run - Localizador correcto : By.xpath: //button[ @class='andes-button andes-spinner__icon-base andes-button--quiet']//span[text()='Agregar al carrito']
+08:47:00 [main] INFO  run.Run - Localizador correcto : By.xpath: //span[text()='Crear cuenta']
+08:47:01 [main] INFO  run.Run - Localizador correcto : By.id: terms-and-conds
+08:47:03 [main] INFO  run.Run - Localizador correcto : By.xpath: //span[text()='Continuar']
+08:47:05 [main] INFO  run.Run - Elemento visible : By.xpath: //span[text()='Validar']
+08:47:05 [main] ERROR run.Run - org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='Ingresar']"}
+  (Session info: chrome=106.0.5249.119)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'PE-HO-012', ip: '192.168.10.11', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [016f94b9d59f6b4a730053ab9f01fa6a, findElement {using=xpath, value=//span[text()='Ingresar']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\MILTON~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:60394}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60394/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 016f94b9d59f6b4a730053ab9f01fa6a
+08:47:05 [main] INFO  run.Run - Se borra el texto de txt : By.xpath: //input[@class='andes-form-control__field']
+08:47:05 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.xpath: //input[@class='andes-form-control__field']
+08:47:11 [main] INFO  run.Run - El caso de prueba : crearCuentaha iniciado correctamente
+08:47:11 [main] INFO  run.Run - El caso de prueba : crearCuenta tomara evidencias
+08:47:14 [main] INFO  run.Run - Localizador correcto : By.xpath: //a[@data-link-id='registration']
+08:47:14 [main] ERROR run.Run - org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[text() = 'Entendido']"}
+  (Session info: chrome=106.0.5249.119)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'PE-HO-012', ip: '192.168.10.11', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [016f94b9d59f6b4a730053ab9f01fa6a, findElement {using=xpath, value=//button[text() = 'Entendido']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\MILTON~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:60394}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60394/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 016f94b9d59f6b4a730053ab9f01fa6a
+08:47:15 [main] INFO  run.Run - Localizador correcto : By.id: terms-and-conds
+08:47:17 [main] INFO  run.Run - Localizador correcto : By.xpath: //span[text()='Continuar']
+08:47:17 [main] ERROR run.Run - org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='Validar']"}
+  (Session info: chrome=106.0.5249.119)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'PE-HO-012', ip: '192.168.10.11', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [016f94b9d59f6b4a730053ab9f01fa6a, findElement {using=xpath, value=//span[text()='Validar']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\MILTON~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:60394}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60394/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 016f94b9d59f6b4a730053ab9f01fa6a
+08:47:19 [main] INFO  run.Run - Elemento visible : By.xpath: //span[text()='Ingresar']
+08:47:19 [main] INFO  run.Run - Se borra el texto de txt : By.xpath: //input[@class='andes-form-control__field']
+08:47:20 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.xpath: //input[@class='andes-form-control__field']
+08:47:20 [main] ERROR run.Run - java.lang.InterruptedException
+08:47:20 [main] INFO  run.Run - El caso de prueba : alertsToolsha iniciado correctamente
+08:47:20 [main] INFO  run.Run - El caso de prueba : alertsTools tomara evidencias
+08:47:24 [main] INFO  run.Run - Se realiza escroll vertical de 200 pixeles1 cantidad de veces
+08:47:27 [main] INFO  run.Run - Se realiza escroll vertical de 200 pixeles1 cantidad de veces
+08:47:54 [main] INFO  run.Run - Se realiza escroll vertical de 200 pixeles1 cantidad de veces
+08:48:00 [main] INFO  run.Run - El caso de prueba : dateToolsha iniciado correctamente
+08:48:00 [main] INFO  run.Run - El caso de prueba : dateTools tomara evidencias
+08:48:02 [main] INFO  run.Run - Se realiza escroll vertical de 200 pixeles1 cantidad de veces
+08:48:05 [main] INFO  run.Run - Se realiza escroll vertical de 210 pixeles1 cantidad de veces
+08:48:09 [main] INFO  run.Run - Se borra el texto de txt : By.id: datePickerMonthYearInput
+08:48:10 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.id: datePickerMonthYearInput
+08:48:14 [main] INFO  run.Run - Se borra el texto de txt : By.id: dateAndTimePickerInput
+08:48:15 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.id: dateAndTimePickerInput
+08:48:17 [main] INFO  run.Run - El caso de prueba : mercuryToursha iniciado correctamente
+08:48:17 [main] INFO  run.Run - El caso de prueba : mercuryTours tomara evidencias
+08:48:21 [main] INFO  run.Run - Localizador correcto : By.xpath: //*[text()='REGISTER']
+08:48:22 [main] INFO  run.Run - Se borra el texto de txt : By.name: firstName
+08:48:22 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: firstName
+08:48:23 [main] INFO  run.Run - Se borra el texto de txt : By.name: lastName
+08:48:23 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: lastName
+08:48:23 [main] INFO  run.Run - Se borra el texto de txt : By.name: phone
+08:48:23 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: phone
+08:48:24 [main] INFO  run.Run - Se borra el texto de txt : By.id: userName
+08:48:24 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.id: userName
+08:48:24 [main] INFO  run.Run - Se borra el texto de txt : By.name: address1
+08:48:25 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: address1
+08:48:25 [main] INFO  run.Run - Se borra el texto de txt : By.name: city
+08:48:25 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: city
+08:48:25 [main] INFO  run.Run - Se borra el texto de txt : By.name: state
+08:48:26 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: state
+08:48:26 [main] INFO  run.Run - Se borra el texto de txt : By.name: postalCode
+08:48:26 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: postalCode
+08:48:27 [main] INFO  run.Run - Se borra el texto de txt : By.id: email
+08:48:27 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.id: email
+08:48:27 [main] INFO  run.Run - Se borra el texto de txt : By.name: password
+08:48:28 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: password
+08:48:28 [main] INFO  run.Run - Se borra el texto de txt : By.name: confirmPassword
+08:48:28 [main] INFO  run.Run - Se ingresa el valor en el elemento : By.name: confirmPassword
+08:48:32 [main] INFO  run.Run - Localizador correcto : By.name: submit

@@ -20,7 +20,7 @@ public class PageObjectToolsDatePicker extends MapObjectToolsDatePicker {
 		//REALIZAR SCROLL DOWN	
 		scrollDown(210, 1);
 		//INGRESAR A LA SECCION DATA PICKER
-		clickTools(btnDatePicker, rutaCarpeta, evidencia);
+		clickTools(btnDatePicker, rutaCarpeta, evidencia,"Se ingresa a la seccion Date Picker");
 		
 		//LLAMADO FECHA DEL SISTEMA
 		String fecha = fechaHoraToolsQa();
@@ -43,19 +43,20 @@ public class PageObjectToolsDatePicker extends MapObjectToolsDatePicker {
 		String fechaMenorHora = mes+"/"+dia+"/"+anno+" "+hora+":"+min+":"+seg;
 		
 		//ENTRAR AL TXT 
-		clickTools(txtSelectDate, rutaCarpeta, evidencia);
+		clickTools(txtSelectDate, rutaCarpeta, evidencia, "Se selecciona el primer cuadro de texto ");
 		tiempoEspera(1000);
 		//BORRAR CONTENIDO DE SELECT DATA
-		borrartxt(txtSelectDate, rutaCarpeta, evidencia);
+		borrartxt(txtSelectDate, rutaCarpeta, evidencia, "Se borra el contenido del cuadro de texto");
 		//ENVIAR IMPUT EN SELEC DATA
-		sendKey(fechaMenor,txtSelectDate, rutaCarpeta, evidencia);
+		sendKey(fechaMenor,txtSelectDate, rutaCarpeta, evidencia,"Se ingresa la fecha");
+		click(textDataAndTime,rutaCarpeta, evidencia, "se da un click por fuera ");
 		
 		// ENTRAR EN DATE AND TIME DIA ANTERIOR Y # HORA ANTERIOR
-		clickTools(txtDataAndTime,rutaCarpeta, evidencia);
+		clickTools(txtDataAndTime,rutaCarpeta, evidencia, "Se ingresa al segundo cuadro de texto");
 		tiempoEspera(1000);
-		borrartxt(txtDataAndTime, rutaCarpeta, evidencia);
-		sendKey(fechaMenorHora,txtDataAndTime, rutaCarpeta, evidencia);
-		clickTools(textDataAndTime,rutaCarpeta, evidencia);
+		borrartxt(txtDataAndTime, rutaCarpeta, evidencia, "Se borra el contenido del texto ");
+		sendKey(fechaMenorHora,txtDataAndTime, rutaCarpeta, evidencia,"Se ingresa la fecha");
+		click(textDataAndTime,rutaCarpeta, evidencia, "se da un click por fuera para visualizar las fechas ingresadas");
 		tiempoEspera(1000);
 	}
 	

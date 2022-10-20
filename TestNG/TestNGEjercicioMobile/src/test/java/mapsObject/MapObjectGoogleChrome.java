@@ -12,11 +12,11 @@ public class MapObjectGoogleChrome extends ClaseBase {
 	}
 
 	// ELEMENTOS DE LA PAG PRINCIPAL
-	//BTN OPCIONES
+	// BTN OPCIONES
 	protected By btnOpciones = By.id("com.android.chrome:id/menu_button");
-	//BTN NUEVA PESTAÑA
+	// BTN NUEVA PESTAÑA
 	protected By btnNuevaPestaña = By.xpath("//android.widget.TextView[@text='Nueva pestaña']");
-	//CAMPO DE BUSQUEDA
+	// CAMPO DE BUSQUEDA
 	protected By txtBuscar = By.id("com.android.chrome:id/search_box_text");
 	// CAMPO DE BUSQUEDA SELECCIONADO
 	protected By txtBuscarDos = By.id("com.android.chrome:id/url_bar");
